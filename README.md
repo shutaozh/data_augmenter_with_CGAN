@@ -1,5 +1,5 @@
 # data_augmenter_with_CGAN
-Code for paper: Progressive RSS Data Augmenter with Conditional Adversarial Networks
+Source Code and dataset for paper: Progressive RSS Data Augmenter with Conditional Adversarial Networks
 
 1. Train model
 
@@ -12,7 +12,7 @@ python train.py
 python eval.py
 ```
 
-2. evaluate model
+3. evaluate model
 ```bash
 python score.py
 ```
