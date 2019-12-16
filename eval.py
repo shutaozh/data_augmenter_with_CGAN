@@ -35,7 +35,7 @@ def main(_):
             data_size=FLAGS.data_size,
             condition_size=FLAGS.condition_size,
             batch_size=FLAGS.batch_size,
-            z_dim=FLAGS.generate_test_images,
+            z_dim=FLAGS.z_dim,
             checkpoint_dir=FLAGS.checkpoint_dir,
             data_dir=FLAGS.data_dir)
 
@@ -50,7 +50,7 @@ def main(_):
             for idx in xrange(0, int(batch_idxs)):
                 batch = condition[idx * FLAGS.batch_size:(idx + 1) * FLAGS.batch_size]
                 batch_condition = np.array(batch)
-                batch_z = np.random.uniform(-1, 1, [FLAGS.batch_size, FLAGS.generate_test_images]) \
+                batch_z = np.random.uniform(-1, 1, [FLAGS.batch_size, FLAGS.z_dim]) \
                     .astype(np.float32)
 
                 fake = sess.run(cgan.G, feed_dict={cgan.condition_inputs: batch_condition, cgan.z: batch_z})
